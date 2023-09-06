@@ -39,14 +39,4 @@ public class JwtHandler {
                 .parseClaimsJws(token)
                 .getBody();
     }
-
-    public static class VerificationResult {
-        public Claims claims;
-        public String token;
-
-        public VerificationResult(Claims claims, String token) {
-            this.claims = claims;
-            this.token = token;
-        }
-    }
 }
