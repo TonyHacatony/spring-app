@@ -1,6 +1,6 @@
 package com.everamenkou.springapp.auth.security;
 
-import com.everamenkou.springapp.auth.exception.UnauthorizedException;
+import com.everamenkou.springapp.auth.errorhandling.exception.UnauthorizedException;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;

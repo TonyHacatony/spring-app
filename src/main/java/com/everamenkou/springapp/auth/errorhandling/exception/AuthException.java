@@ -1,4 +1,4 @@
-package com.everamenkou.springapp.auth.exception;
+package com.everamenkou.springapp.auth.errorhandling.exception;
 
 public class AuthException extends ApiException {
 

@@ -1,7 +1,7 @@
 package com.everamenkou.springapp.auth.security;
 
 import com.everamenkou.springapp.auth.entity.UserEntity;
-import com.everamenkou.springapp.auth.exception.UnauthorizedException;
+import com.everamenkou.springapp.auth.errorhandling.exception.UnauthorizedException;
 import com.everamenkou.springapp.auth.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.ReactiveAuthenticationManager;
