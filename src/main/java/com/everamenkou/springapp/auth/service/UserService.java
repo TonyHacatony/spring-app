@@ -28,9 +28,7 @@ public class UserService {
                         .createdAt(LocalDateTime.now())
                         .updatedAt(LocalDateTime.now())
                         .build()
-        ).doOnSuccess(u -> {
-            log.info("IN registerUser - user: {} created", u);
-        });
+        ).doOnSuccess(u -> log.info("IN registerUser - user: {} created", u));
     }
 
     public Mono<UserEntity> getUserById(Long id) {
