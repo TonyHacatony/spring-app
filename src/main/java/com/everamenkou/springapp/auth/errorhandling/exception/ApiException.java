@@ -1,5 +1,8 @@
-package com.everamenkou.springapp.auth.exception;
+package com.everamenkou.springapp.auth.errorhandling.exception;
 
+import lombok.Getter;
+
+@Getter
 public class ApiException extends RuntimeException {
 
     protected String errorCode;

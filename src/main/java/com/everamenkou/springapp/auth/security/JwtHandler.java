@@ -1,6 +1,6 @@
 package com.everamenkou.springapp.auth.security;
 
-import com.everamenkou.springapp.auth.exception.UnauthorizedException;
+import com.everamenkou.springapp.auth.errorhandling.exception.UnauthorizedException;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
@@ -38,15 +38,5 @@ public class JwtHandler {
                 .build()
                 .parseClaimsJws(token)
                 .getBody();
-    }
-
-    public static class VerificationResult {
-        public Claims claims;
-        public String token;
-
-        public VerificationResult(Claims claims, String token) {
-            this.claims = claims;
-            this.token = token;
-        }
     }
 }

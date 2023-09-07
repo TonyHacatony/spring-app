@@ -1,8 +1,8 @@
 package com.everamenkou.springapp.auth.security;
 
 import com.everamenkou.springapp.auth.entity.UserEntity;
-import com.everamenkou.springapp.auth.exception.AuthException;
-import com.everamenkou.springapp.auth.repository.UserRepository;
+import com.everamenkou.springapp.auth.errorhandling.exception.AuthException;
+import com.everamenkou.springapp.auth.service.UserService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +20,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class SecurityService {
 
-    private final UserRepository repository;
+    private final UserService userService;
     private final PasswordEncoder passwordEncoder;
 
     @Value("${jwt.secret}")
@@ -31,7 +31,7 @@ public class SecurityService {
     private String issuer;
 
     public Mono<TokenDetails> authenticate(String username, String password) {
-        return repository.findByUsername(username)
+        return userService.getUserByUsername(username)
                 .flatMap(user -> {
                     if (!user.isEnabled()) {
                         Mono.error(new AuthException("Account disabled", "USER_ACCOUNT_DISABLED"));
